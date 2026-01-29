@@ -1,3 +1,5 @@
+package SingleThreaded;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -7,7 +9,7 @@ import java.io.InputStreamReader;
 
 public class Server {
 
-    public void run() {
+    public void run() throws IOException {
         int port = 8080;
         ServerSocket socket = new ServerSocket(port);
         socket.setSoTimeout(10000);

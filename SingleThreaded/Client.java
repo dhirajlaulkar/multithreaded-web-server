@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 public class Client {
-    public void run()  UnknownHostException, IOException {
+    public void run() throws UnknownHostException, IOException {
         int port = 8080;
         InetAddress address = InetAddress.getByName("localhost");
         Socket socket = new Socket(address, port);
