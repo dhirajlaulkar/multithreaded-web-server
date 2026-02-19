@@ -23,7 +23,7 @@ public class server {
         int port = 8010;
         try{
             ServerSocket serverSocket = new ServerSocket(port);
-            serverSocket.getSoTimeout(10000);
+            serverSocket.setSoTimeout(10000);
             System.out.println("server is listening on port " + port);
             while(true){
                 Socket acceptedSocket = serverSocket.accept();
