@@ -6,16 +6,17 @@ import java.util.function.Consumer;
 
 public class server {
 
-    return(clienSocket)->
-    {
-        try{
-            PrintWriter toClient = new PrintWriter(clienSocket.getOutputStream(), true);
-            toClient.println("Hello from server");
-            toClient.close();
-            clienSocket.close();
-        }catch(IOException ex){
-            System.out.println("Error handling client: " + ex.getMessage());
-        }
+    public Consumer<Socket> getConsumer() {
+        return (clientSocket) -> {
+            try {
+                PrintWriter toClient = new PrintWriter(clientSocket.getOutputStream(), true);
+                toClient.println("Hello from server");
+                toClient.close();
+                clientSocket.close();
+            } catch (IOException ex) {
+                System.out.println("Error handling client: " + ex.getMessage());
+            }
+        };
     }
 
     public static void main(String[] args) {
